@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            height:100000px;
+        }
+        span{
+            display:block;
+            width:100%;
+            position:fixed;
+            top:0;right:0;
+            text-align:right;
+        }
+        a{
+            display:inline-block;
+            vertical-align:middle;
+            padding:10px 40px;
+            background:green;
+            text-decoration:none;
+            color:#fff;
+            margin:0 10px;
+        }
+        a.red{background:#f00;}
+        div{
+            width:400px;
+            height:500px;
+            border:1px solid #f00;
+            margin-bottom:10px;
+            text-align:center;
+            line-height:500px;
+            font-size:80px;
+            color:#f00;
+        }
+    </style>
+</head>
+<body>
+<span>
+    <a href="javascript:void(0)" class="red">1</a>
+    <a href="javascript:void(0)">2</a>
+    <a href="javascript:void(0)">3</a>
+    <a href="javascript:void(0)">4</a>
+    <a href="javascript:void(0)">5</a>
+    <a href="javascript:void(0)">6</a>
+</span>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<script>
+
+    var div = document.getElementsByTagName('div');
+    var a = document.getElementsByTagName('a');
+    var leader= 0,target= 0;
+    var timer=null;
+    for(var i=0;i<a.length;i++){
+        a[i].index=i;
+        a[i].onclick = function(){   // 闭包是为了让点击的时候 只获取当前被点击的元素 和 element[i].index = i;是一样的效果;
+                for(var j=0;j<a.length;j++){
+                    a[j].className = '';
+                }
+                a[this.index].className = 'red';
+                target = div[this.index].offsetTop;  // 点击每一楼层 给滚动条赋值对应楼层距离顶部的距离; offsetTop;
+                timer = setInterval(function() {
+                leader = leader + (target - leader ) /10;
+                window.scrollTo(0,leader); // 屏幕滑动
+                //B.style.top = leader  + 'px';
+            },30)
+
+        }
+    }
+
+    window.onscroll = function(){
+        var windowScrollTop = document.documentElement.scrollTop||document.body.scrollTop; // 获取鼠标滑动时的滚动条高度;
+        for(var i=0;i<div.length;i++){
+            if(windowScrollTop>=div[i].offsetTop){  // 判断滚动条是否比当前div距离浏览器顶部的距离;
+                for(var j=0;j<div.length;j++){
+                    a[j].className = '';
+                }
+                a[i].className = 'red';
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
