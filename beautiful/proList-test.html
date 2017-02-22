@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons/iconfont.css"/>
+		<style type="text/css">
+              .Z_proList{width: 100%;height: 100%;display: -webkit-box;-webkit-box-orient: vertical;}
+              .Z_proList header{width: 100%;height: 46px;line-height: 46px;background: #E43669;}
+              .Z_proList footer{width: 100%;height: 46px;line-height: 46px;background: #52525A;}
+              .Z_proList .wrapper{-webkit-box-flex: 1;overflow: hidden;position: relative;width: 100%;}
+              .Z_proList .imgBox{width: 100px;height: 100px;}
+              .Z_proList .imgBox img{width: 100%;height: 100%;}
+              .Z_proList .main_nav{width: 100%;height: 36px;line-height: 36px;background: #ee5e5e;color: #FFFFFF;position: relative;}
+              .Z_proList .iconfontGroup{width: 100%;white-space: nowrap;font-size: 20px;}
+              .Z_proList .iconfontGroup .iconbox{color: #fff;margin-left: 20px;}
+              
+		</style>
+	</head>
+
+	<body>
+		<div class="Z_proList">
+			<header>
+				<h1 id="title">商品列表</h1>
+			</header>
+			<nav id="main_nav" class="main_nav">
+				<div class="iconfontGroup" id="iconfontGroup"></div>
+			</nav>
+			<div class="wrapper" id="wrapper">
+				<div class="scrollBox" id="scrollBox">
+					<!--<div class="imgBox">
+						<img src="" />
+					</div>
+					<div class="prodname">
+					</div>
+					<div class="priceBox"></div>-->
+				</div>
+			</div>
+			<footer></footer>
+			<input type="hidden" name="num" id="num" value="1" />
+		</div>
+		<script type="text/javascript" src="js/lib2/zepto.min.js"></script>
+		<script type="text/javascript" src="js/lib2/iscroll.js"></script>
+		<script type="text/javascript" src="js/proList-test.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="fontawesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons/iconfont.css"/>
+	</head>
+
+	<body>
+		<div class="Z_proList">
+			<header>
+				<h1 id="title">商品列表</h1>
+			</header>
+			<nav id="main_nav" class="main_nav">
+				<div class="iconfontGroup" id="iconfontGroup"></div>
+			</nav>
+			<div class="wrapper" id="wrapper">
+				<div class="scrollBox" id="scrollBox">
+					<!-- <div class="imgBox">
+						     <img src="img/col_pic2.jpg" />
+					      </div>
+					<dl class="prodname">
+						<dt>
+							<p>ESPRIT 阿玛尼眼镜框</p>
+							<p>【买一赠一】</p>
+						</dt>
+						<dd class="priceBox">
+							<p>单价：<span class="price">￥<strong >99</strong></span></p>
+							<p class="bot"><span class="discount">3.8</span>折<a class="line_throug" href="javascript:;">￥499</a></p>
+					   </dd>
+					   <div class="shoppingBox"><i class="fa fa-shopping-cart"></i></div>
+					</dl>-->
+				</div>
+			</div>
+			<footer></footer>
+			<input type="hidden" name="num" id="num" value="1" />
+		</div>
+		<script type="text/html" id="goodsList">
+		      {{each goods as val i}}
+                    <div class="imgBox">
+						    
+						    <img  src=" {{val.goodsListImg}} "/>
+					</div>
+					<dl class="prodname">
+						<dt>
+							<p>{{val.goodsName}}</p>
+							<p>【买一赠一】</p>
+						</dt>
+						<dd class="priceBox">
+							<p>单价：<span class="price">￥<strong >{{val.price}}</strong></span></p>
+							<p class="bot"><span class="discount">{{val.discount}}</span>折<a class="line_throug" href="javascript:;">￥499</a></p>
+					   </dd>
+					   <div class="shoppingBox"><i class="fa fa-shopping-cart"></i></div>
+					</dl>
+			   {{/each}}		
+		</script>
+		<script type="text/javascript" src="js/lib2/zepto.min.js"></script>
+		<script type="text/javascript" src="js/lib2/iscroll-min.js"></script>
+		<script type="text/javascript" src="js/artTamplate.js"></script>
+		<script type="text/javascript" src="js/proList.js"></script>
+	</body>
+
+</html>

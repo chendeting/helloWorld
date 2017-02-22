@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="fontawesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+	</head>
+
+	<body>
+		<div class="shoppingCart">
+
+			<div class="header">
+				<div class="direction"><i class="fa fa-mail-reply"></i></div>
+				<p>购物车</p>
+				<input type="button" name="btn" id="btn" class="btn" value="去结算" />
+			</div>
+			<div class="topH"></div>
+			<div class="content">
+				<div class="goods">
+					<div class="head">
+						<p>商品数量:<span class="num"></span></p>
+						<p>应付总额(不含运费):<span class="total_price"></span></p>
+					</div>
+					<div class="cart" id="cart">
+					   <!-- <div class="pic">
+							     <img src="img/cart_pic.jpg" />
+						     </div>
+						<div class="info">
+							<p class="info_txt">ESPRIT 气质V领玫红T恤</p>
+							<p class="info_control"><a href="javascript:;"><i class="fa fa-remove"></i></a></p>
+							<p class="info_price">单价：<span>￥<i>199</i></span></p>
+							<p class="info_size">L</p>
+							<p class="info_number">数量：
+								<input type="button" value="-" class="reduce" />
+								<span class="number">1</span>
+								<input type="button" name="" id="" value="+" class="add" />
+							</p>
+						
+						</div> -->
+					</div>
+					<div class="empty">
+			          <h1>你的购物车空空~</h1>
+			          <div><img src="img/empty.jpg" /></div>
+			          <input type="button" class="go" value="去逛逛" />
+				    </div>
+				</div>
+			</div>
+		</div>
+		<div class="bottomH"></div>
+		<div class="footer">
+			<div >
+				<i class="fa fa-home"></i>
+				<p>首页</p>
+			</div>
+			<div>
+				<i class="fa fa-bars"></i>
+				<p>分类</p>
+			</div>
+			<div class="curr">
+				<i class="fa fa-shopping-cart"></i>
+				<p>购物车</p>
+			</div>
+			<div >
+				<i class="fa fa-user"></i>
+				<p>我的乐美</p>
+			</div>
+			<div>
+				<i class="fa fa-ellipsis-h"></i>
+				<p>更多</p>
+			</div>
+		</div>
+		<script type="text/html" id="cart_temp">
+		      {{each cars as val i}}
+	                 <div class="pic">
+						<img src="{{val.goodsListImg}}" />
+				     </div>
+				     <div class="info">
+						<p class="info_txt">{{val.goodsName}}</p>
+						<p class="info_control"><a href="javascript:;"><i class="fa fa-remove"></i></a></p>
+						<p class="info_price">单价：<span>￥<i>{{val.price}}</i></span></p>
+						<p class="info_size">L</p>
+						<p class="info_number">数量：
+							<input type="button" value="-" class="reduce" />
+							<span class="number">{{val.number}}</span>
+							<input type="button" name="" id="" value="+" class="add" />
+						</p>
+				     </div>
+		       {{/each}}
+              
+		</script>
+		<script type="text/javascript" src="js/lib2/zepto.min.js"></script>
+		<script type="text/javascript" src="js/lib2/iscroll-min.js"></script>
+		<script type="text/javascript" src="js/artTamplate.js"></script>
+		<script type="text/javascript" src="js/comon.js"></script>
+		<script type="text/javascript" src="js/shoppingCart.js"></script>
+	</body>
+
+</html>
