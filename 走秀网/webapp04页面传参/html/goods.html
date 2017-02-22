@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<div class="mainBox"></div>
+		<script src="../../bags/jquery-2.2.3.min.js"></script>
+		<script src="../../bags/iscroll-master/build/iscroll.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+		//console.log(GetUrlString("goodsID"));
+		
+			var goodsID=GetQueryString("goodsID");
+			getGoods_ajax({
+				goodsID:goodsID,
+				callBack:function(data){
+					//console.log(data);
+					console.log(eval('{a:1,b:3}'));
+					$(".mainBox").append($("<div>"+data[0].goodsBenUrl+"</div>"));
+				}
+			});
+		</script>
+	</body>
+</html>

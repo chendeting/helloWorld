@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<div id="mainbox"></div>
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			getcar({
+				userID:"941212",
+				callback:function(data){
+					var $mainbox=$("#mainbox");
+					$.each(data, function(index) {
+						var prod=$("<div><img src='"+data[index].goodsListImg+"'></div>");
+						$mainbox.append(prod);
+					});
+					
+				}})
+		</script>
+	</body>
+</html>
