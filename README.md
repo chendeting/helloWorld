@@ -1,2 +1,2 @@
-# helloWorld
-just another repository
+# 微信项目
+这是一个基于Maven构建的项目，在eclipse里面运行jsp，在webstorm里面编写前端静态代码，运用响应式布局开发此项目
